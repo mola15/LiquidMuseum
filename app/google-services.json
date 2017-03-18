@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "946351201386",
+    "firebase_url": "https://liquid-museum.firebaseio.com",
+    "project_id": "liquid-museum",
+    "storage_bucket": "liquid-museum.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:946351201386:android:e200dbdefae355a2",
+        "android_client_info": {
+          "package_name": "it.polimi.molinaroli.liquidmuseum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "946351201386-bj8i59c2ioh24vkp4lpe27tckvoi93q3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsjMltKg-iD2-Ty0BtLVGKuMrML0ng96I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
