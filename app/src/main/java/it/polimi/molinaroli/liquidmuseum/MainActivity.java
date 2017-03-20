@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     Button image;
     Button play;
     Button pause;
+    Button audio;
 
     private ServiceConnection mConnection = new ServiceConnection() {
 
@@ -127,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
         setupImage();
         setupplay();
         setuppause();
+        setupAudio();
 
         super.onStart();
 
@@ -168,6 +170,31 @@ public class MainActivity extends AppCompatActivity {
                     Log.e("button",vintent.getDataString());
                     Log.e("button",vintent.getType());
                     helper.forwardIntent(c,vintent,myServerPort);
+                }catch (Exception e){
+                    Toaster.toast("Service not Started");
+                }
+
+            }
+        });
+
+    }
+
+    public void setupAudio(){
+        audio = (Button) findViewById(R.id.openaudio);
+        audio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try{
+                    //eseguo solo se ho il bind attivo
+                    helper = mService.getHelper();
+                    //uso un altro metodo perchè non serve il dialog voglio mandare direttamente gli intent
+                    String audioUrl = "https://firebasestorage.googleapis.com/v0/b/liquid-museum.appspot.com/o/Louvre.mp3?alt=media&token=6348b060-820b-4d22-861c-92faa367fb63";
+                    //String videoUrl ="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4";
+                    Intent aintent = new Intent(Intent.ACTION_VIEW);
+                    aintent.setDataAndType(Uri.parse(audioUrl),"audio/*");
+                    Log.e("button",aintent.getDataString());
+                    Log.e("button",aintent.getType());
+                    helper.forwardIntent(c,aintent,myServerPort);
                 }catch (Exception e){
                     Toaster.toast("Service not Started");
                 }
